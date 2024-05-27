@@ -1,0 +1,58 @@
+/* src/components/Timetable.css */
+.timetable-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-room-button {
+  margin-left: auto;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.fc .fc-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.fc .fc-button:hover {
+  background-color: #0056b3;
+}
+
+/* src/components/Modal.css */
+.modal .modal-dialog {
+  max-width: 500px;
+}
+
+.modal .modal-content {
+  padding: 20px;
+}
+
+.modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal .modal-body {
+  padding: 20px;
+}
+
+.modal .modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
