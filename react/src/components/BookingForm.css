@@ -1,29 +1,68 @@
 /* src/components/BookingForm.css */
 
 .booking-form {
-  display: flex;
-  flex-direction: column;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
 }
 
-.form-group {
+.booking-form .form-group {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.booking-form .form-group label {
   display: block;
+  font-weight: bold;
   margin-bottom: 5px;
+  color: #333;
 }
 
-.form-control {
+.booking-form .form-control {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.booking-form .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.booking-form textarea.form-control {
+  resize: vertical;
+  height: 100px;
 }
 
 .modal-footer {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #dee2e6;
+  margin-top: 20px;
+}
+
+.modal-footer .btn {
+  margin-left: 10px;
+}
+
+.booking-form .btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.booking-form .btn:hover {
+  background-color: #0056b3;
+}
+
+.booking-form .btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
 }

@@ -1,25 +1,32 @@
-// src/utils/axios.js
-
+// src/api/axios.js
 import axios from 'axios';
+import { getToken, removeToken } from '../context/AuthContext';
 
-const instance = axios.create({
-  baseURL: 'http://localhost:8000/', // Django backend API URL
-  timeout: 1000,
-  headers: { 'Content-Type': 'application/json' },
+const axiosInstance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/',
 });
 
-instance.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   (config) => {
-    const tokens = JSON.parse(localStorage.getItem('tokens'));
-    if (tokens) {
-      config.headers.Authorization = `Bearer ${tokens.access}`;
-    }
-    return config;
+      const token = getToken();
+      if (token) {
+          config.headers.Authorization = `Bearer ${token}`;
+      }
+      return config;
   },
+  (error) => Promise.reject(error)
+);
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
   (error) => {
-    return Promise.reject(error);
+      if (error.response.status === 401) {
+          removeToken();
+          // Optional: Redirect to login page
+      }
+      return Promise.reject(error);
   }
 );
 
-export default instance;
+export default axiosInstance;
 

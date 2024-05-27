@@ -10,7 +10,7 @@ const useRooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get('/api/rooms/');
+        const response = await axios.get('/rooms/');
         setRooms(response.data);
       } catch (err) {
         setError(err);
